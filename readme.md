@@ -1,0 +1,1 @@
+![DIAGRAMMA E-R DB-HASTEGA-TEST-TECNICO](https://iili.io/JE9oNNn.png)
