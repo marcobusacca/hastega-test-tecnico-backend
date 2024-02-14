@@ -2,13 +2,13 @@ package it.hastega.spring.db.pojo;
 
 import java.time.LocalDate;
 
-import org.springframework.cglib.core.Local;
-
+import it.hastega.spring.auth.db.pojo.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Book {
@@ -37,6 +37,9 @@ public class Book {
 
     @Column(nullable = true)
     private LocalDate deletedAt;
+
+    @ManyToOne
+    private User user;
 
     public Book() {
     }
@@ -112,6 +115,14 @@ public class Book {
 
     private void setDeletedAt(LocalDate deletedAt) {
         this.deletedAt = deletedAt;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public void markAsDeleted() {
