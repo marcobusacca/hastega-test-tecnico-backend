@@ -1,6 +1,7 @@
 package it.hastega.spring.auth.db.pojo;
 
 import java.util.Collection;
+import java.util.Collections;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -26,7 +27,7 @@ public class User implements UserDetails {
     @Column(nullable = false)
     private String surname;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String email;
 
     public User() {
@@ -74,21 +75,23 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAuthorities'");
+        // Supponendo che l'applicazione non utilizzi i ruoli per ora
+        return Collections.emptyList();
     }
 
     @Override
     public String getPassword() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPassword'");
+        // L'utente non dispone di una password
+        return "";
     }
 
     @Override
     public String getUsername() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getUsername'");
+        // L'username è rappresentato dall'email dell'utente
+        return this.email;
     }
+
+    // METODI RELATIVI ALLO STATUS DELL'ACCOUNT
 
     @Override
     public boolean isAccountNonExpired() {
