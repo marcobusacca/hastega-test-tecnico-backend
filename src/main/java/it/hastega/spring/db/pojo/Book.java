@@ -44,13 +44,14 @@ public class Book {
     public Book() {
     }
 
-    public Book(String title, String author, String plot, int readingNumber, String isbnCode) {
+    public Book(String title, String author, String plot, int readingNumber, String isbnCode, User user) {
         setTitle(title);
         setAuthor(author);
         setPlot(plot);
         setReadingNumber(readingNumber);
         setIsbnCode(isbnCode);
         setCreatedAt(LocalDate.now());
+        setUser(user);
     }
 
     public int getId() {
