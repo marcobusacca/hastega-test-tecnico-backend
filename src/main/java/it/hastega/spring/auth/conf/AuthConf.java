@@ -25,8 +25,10 @@ public class AuthConf {
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         http.csrf(csrf -> csrf.disable())
+                .cors(withDefaults())
                 .authorizeHttpRequests(requests -> requests.requestMatchers("/api/**").permitAll())
-                .formLogin(withDefaults()).logout(withDefaults());
+                .formLogin(withDefaults())
+                .logout(withDefaults());
 
         return http.build();
     }
