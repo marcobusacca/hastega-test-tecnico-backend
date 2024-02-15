@@ -34,7 +34,7 @@ public class HastegaTestTecnicoBackendApplication implements CommandLineRunner {
 		userService.save(u3);
 
 		// CREO I LIBRI
-		Book b1 = new Book("Programmare con C", "Antonio Pelleriti",
+		Book b1 = new Book("Programmare con C#", "Antonio Pelleriti",
 				"C# è il punto di riferimento della programmazione .NET da quasi vent’anni e rappresenta il linguaggio principe della piattaforma. C#, con .NET Core, è oggi multipiattaforma e consente di sviluppare in modo rapido e produttivo su quasi ogni sistema operativo, e con Xamarin anche su ambienti mobile.\r\n"
 						+ //
 						"Lo scopo di questo libro è illustrare le basi del linguaggio, quindi la sintassi e i suoi costrutti, applicate al paradigma di programmazione orientato agli oggetti, per poi passare ai concetti avanzati ed esplorare C# e Visual Studio in tutte le loro sfaccettature. Il libro, grazie alla sua completezza, è adatto sia a chi non ha mai programmato e vuole imparare da zero, sia a chi invece proviene da altri linguaggi e vuole cimentarsi nello sviluppo in C# e .NET.",

@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import it.hastega.spring.db.pojo.Book;
 import it.hastega.spring.db.serv.BookService;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("api/books")
@@ -25,5 +27,13 @@ public class BookRestController {
         List<Book> books = bookService.findByUserId(user_id);
 
         return new ResponseEntity<>(books, HttpStatus.OK);
+    }
+
+    @PostMapping
+    public ResponseEntity<Book> storeBook(@RequestBody Book book) {
+
+        bookService.save(book);
+
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
