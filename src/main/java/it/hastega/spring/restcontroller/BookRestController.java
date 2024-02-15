@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,13 +27,13 @@ public class BookRestController {
     @GetMapping
     public ResponseEntity<List<Book>> getBooksByUserId(int user_id) {
 
-        List<Book> books = bookService.findByUserId(user_id);
+        List<Book> books = bookService.findByUserIdAndDeletedAtNull(user_id);
 
         return new ResponseEntity<>(books, HttpStatus.OK);
     }
 
     @PostMapping
-    public ResponseEntity<Book> storeBook(@RequestBody Book bookForm) {
+    public ResponseEntity<String> storeBook(@RequestBody Book bookForm) {
 
         Book book = new Book(bookForm.getTitle(), bookForm.getAuthor(), bookForm.getPlot(), bookForm.getReadingNumber(),
                 bookForm.getIsbnCode(), bookForm.getUser());
@@ -43,7 +44,7 @@ public class BookRestController {
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<Book> updateBook(@PathVariable int id, @RequestBody Book bookForm) {
+    public ResponseEntity<String> updateBook(@PathVariable int id, @RequestBody Book bookForm) {
 
         Book book = bookService.findById(id);
 
@@ -52,6 +53,17 @@ public class BookRestController {
         book.setPlot(bookForm.getPlot());
         book.setReadingNumber(bookForm.getReadingNumber());
         book.setIsbnCode(bookForm.getIsbnCode());
+
+        bookService.save(book);
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> deleteBook(@PathVariable int id) {
+
+        Book book = bookService.findById(id);
+        book.markAsDeleted();
 
         bookService.save(book);
 

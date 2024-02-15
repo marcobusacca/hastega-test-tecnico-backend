@@ -18,8 +18,8 @@ public class BookService {
         return bookRepository.findAll();
     }
 
-    public List<Book> findByUserId(int user_id) {
-        return bookRepository.findByUserId(user_id);
+    public List<Book> findByUserIdAndDeletedAtNull(int user_id) {
+        return bookRepository.findByUserIdAndDeletedAtNull(user_id);
     }
 
     public Book findById(int id) {

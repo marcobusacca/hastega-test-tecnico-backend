@@ -10,5 +10,5 @@ import it.hastega.spring.db.pojo.Book;
 @Repository
 public interface BookRepository extends JpaRepository<Book, Integer> {
 
-    List<Book> findByUserId(int user_id);
+    List<Book> findByUserIdAndDeletedAtNull(int user_id);
 }

@@ -29,7 +29,7 @@ public class Book {
     @Column(nullable = false)
     private int readingNumber;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String isbnCode;
 
     @Column(nullable = false)
