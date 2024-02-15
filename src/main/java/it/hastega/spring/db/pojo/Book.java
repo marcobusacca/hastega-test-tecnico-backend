@@ -58,9 +58,9 @@ public class Book {
         return this.id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    // private void setId(int id) {
+    // this.id = id;
+    // }
 
     public String getTitle() {
         return this.title;
@@ -122,7 +122,7 @@ public class Book {
         return user;
     }
 
-    public void setUser(User user) {
+    private void setUser(User user) {
         this.user = user;
     }
 

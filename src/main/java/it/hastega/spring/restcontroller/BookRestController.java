@@ -32,7 +32,10 @@ public class BookRestController {
     }
 
     @PostMapping
-    public ResponseEntity<Book> storeBook(@RequestBody Book book) {
+    public ResponseEntity<Book> storeBook(@RequestBody Book bookForm) {
+
+        Book book = new Book(bookForm.getTitle(), bookForm.getAuthor(), bookForm.getPlot(), bookForm.getReadingNumber(),
+                bookForm.getIsbnCode(), bookForm.getUser());
 
         bookService.save(book);
 
