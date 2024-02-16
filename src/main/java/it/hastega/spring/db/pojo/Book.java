@@ -9,6 +9,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class Book {
@@ -27,9 +29,11 @@ public class Book {
     private String plot;
 
     @Column(nullable = false)
+    @Min(value = 0)
     private int readingNumber;
 
     @Column(nullable = false)
+    @Size(max = 20)
     private String isbnCode;
 
     @Column(nullable = false)

@@ -26,9 +26,9 @@ public class HastegaTestTecnicoBackendApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		// CREO GLI UTENTI
-		User u1 = new User("marco", "busacca", "marcobusacca01@gmail.com");
-		User u2 = new User("luca", "frasca", "lucafrasca03@gmail.com");
-		User u3 = new User("giovanni", "gallo", "giovannigallo15@gmail.com");
+		User u1 = new User("Marco", "Busacca", "marcobusacca01@gmail.com");
+		User u2 = new User("Luca", "Frasca", "lucafrasca03@gmail.com");
+		User u3 = new User("Giovanni", "Gallo", "giovannigallo15@gmail.com");
 		userService.save(u1);
 		userService.save(u2);
 		userService.save(u3);
