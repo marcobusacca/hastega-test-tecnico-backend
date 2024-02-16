@@ -59,7 +59,7 @@ public class HastegaTestTecnicoBackendApplication implements CommandLineRunner {
 						"Grazie al suo linguaggio semplice e a oltre 400 immagini e diagrammi che accompagnano i singoli passi delle procedure e gli esempi in Python, questo testo è perfetto per programmatori alle prime armi, ingegneri, appassionati di informatica e in generale chiunque voglia avvicinarsi allo studio degli algoritmi.",
 				0, "B0BSZ56QQZ", u2);
 
-		Book b4 = new Book("Guida pratica ai microservizi REST in Java Spring Boot: Dalla configurazione al deploy",
+		Book b4 = new Book("Guida pratica ai microservizi REST in Java Spring Boot",
 				"Gianluca Nuscis",
 				"Fino a pochi anni fa l’approccio alla programmazione prevedeva la creazione di sistemi monolitici “autocontenuti”, ossia ogni programma assolveva in modo specifico e indipendente ai compiti per cui era stato progettato.\r\n"
 						+ //

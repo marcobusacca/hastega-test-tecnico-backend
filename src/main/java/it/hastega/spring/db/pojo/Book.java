@@ -20,9 +20,11 @@ public class Book {
     private int id;
 
     @Column(nullable = false)
+    @Size(max = 60)
     private String title;
 
     @Column(nullable = false)
+    @Size(max = 60)
     private String author;
 
     @Column(columnDefinition = "TEXT", nullable = false)
